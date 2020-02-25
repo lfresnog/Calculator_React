@@ -3,7 +3,9 @@ import Button from './Button'
 import './Styles.css'
 
 const Body  = (props) => {
-    const {onDisplay} = props.onClick;
+   
+    const {onDisplay,onEqual} = props.onClick;
+
     return (
         <div className="basic">
             <div className="b1">
@@ -28,10 +30,10 @@ const Body  = (props) => {
                 </div>
                 <div className="b2b">
                     <Button name="0" onClick = {onDisplay}/>
-                    <Button name="." onClick = {onDisplay}/> 
+                    <Button name="," onClick = {onDisplay}/> 
                 </div>
                 <div className="b2c">
-                    <Button name="=" onClick = {onDisplay}/>
+                    <Button name="=" onClick = {()=>onEqual()}/>
                 </div>
             </div>
         </div>
