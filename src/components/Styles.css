@@ -1,7 +1,7 @@
 .button{
     padding: 10px;
     margin: 10px;
-    width: 80px;
+    width: 60px;
     height: 25px;
     background:#f1f3f4;
     color:#202124;
@@ -11,7 +11,7 @@
 .zero{
     padding: 10px;
     margin: 10px;
-    width: 80px;
+    width: 120px;
     height: 25px;
     background:#dfe1e5;
     color:#202124;
@@ -23,8 +23,8 @@
 .equal{
     padding: 10px;
     margin: 10px;
-    width: 80px;
-    height: 25px;
+    width: 25px;
+    height: 120px;
     background:#dfe1e5;
     color:#202124;
     border: 1px solid#dfe1e5;
@@ -34,7 +34,7 @@
 .App {
     margin-left: auto;
     margin-right: auto;
-    width: 400px;
+    width: 500px;
     display: flex;
     flex-direction: column;
 }
@@ -47,7 +47,7 @@
     justify-content: flex-end;
 
     margin: 10px;
-    width: 400px;
+    width: 500px;
     height: 80px;
     border: 2px solid #dfe1e5;
     box-sizing: border-box;
@@ -60,8 +60,33 @@
 }
 
 .b1{
-    width: 400px;
+    width: 500px;
     height: fit-content;
     display: flex;
     align-content: center;
+    flex-wrap: wrap;
 }
+.b2{
+    width: 500px;
+    height: fit-content;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.b2a{
+    width: 500px;
+    height: fit-content;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.b2b{
+    width: 500px;
+    height: fit-content;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
