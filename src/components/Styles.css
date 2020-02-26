@@ -82,11 +82,4 @@
     flex-wrap: wrap;
 }
 
-.b2b{
-    width: 500px;
-    height: fit-content;
-    display: flex;
-    align-content: center;
-    flex-wrap: wrap;
-}
 
