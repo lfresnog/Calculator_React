@@ -1,39 +1,40 @@
 import React from 'react';
-import Button from './Button'
 import './Styles.css'
 
 const Body  = (props) => {
    
-    const {onDisplay,onEqual} = props.onClick;
+    const {onDisplay,onEqual,onDelete} = props.onClick;
 
     return (
         <div className="basic">
             <div className="b1">
-                <Button name="DEL" onClick = {onDisplay}/> 
-                <Button name="T" onClick = {onDisplay}/>
-                <Button name="/" onClick = {onDisplay}/>
-                <Button name="*" onClick = {onDisplay}/>
-                <Button name="7" onClick = {onDisplay}/>
-                <Button name="8" onClick = {onDisplay}/>
-                <Button name="9" onClick = {onDisplay}/>
-                <Button name="*" onClick = {onDisplay}/>
-                <Button name="4" onClick = {onDisplay}/>
-                <Button name="5" onClick = {onDisplay}/>
-                <Button name="6" onClick = {onDisplay}/>
-                <Button name="+" onClick = {onDisplay}/>
+                <div className="button" onClick = {()=>onDelete()}>DEL</div>
+                <div className="button" onClick = {()=>onDisplay("T")}>T</div>
+                <div className="button" onClick = {()=>onDisplay("/")}>/</div>
+                <div className="button" onClick = {()=>onDisplay("*")}>*</div>
+                <div className="button" onClick = {()=>onDisplay("7")}>7</div>
+                <div className="button" onClick = {()=>onDisplay("8")}>8</div>
+                <div className="button" onClick = {()=>onDisplay("9")}>9</div>
+                <div className="button" onClick = {()=>onDisplay("-")}>-</div>
+                <div className="button" onClick = {()=>onDisplay("4")}>4</div>
+                <div className="button" onClick = {()=>onDisplay("5")}>5</div>
+                <div className="button" onClick = {()=>onDisplay("6")}>6</div>
+                <div className="button" onClick = {()=>onDisplay("+")}>+</div>
             </div>
             <div className="b2">
                 <div className="b2a">
-                    <Button name="1" onClick = {onDisplay}/>
-                    <Button name="2" onClick = {onDisplay}/>
-                    <Button name="3" onClick = {onDisplay}/>
+                    <div className="b2a1">
+                        <div className="button" onClick = {()=>onDisplay("1")}>1</div>
+                        <div className="button" onClick = {()=>onDisplay("2")}>2</div>
+                        <div className="button" onClick = {()=>onDisplay("3")}>3</div>
+                    </div>
+                    <div className="b2a2">
+                        <div className="zero" onClick = {()=>onDisplay("0")}>0</div>
+                        <div className="button" onClick = {()=>onDisplay(".")}>.</div>
+                    </div>
                 </div>
                 <div className="b2b">
-                    <Button name="0" onClick = {onDisplay}/>
-                    <Button name="," onClick = {onDisplay}/> 
-                </div>
-                <div className="b2c">
-                    <Button name="=" onClick = {()=>onEqual()}/>
+                    <div className="equal" onClick = {()=>onEqual()}>=</div>
                 </div>
             </div>
         </div>

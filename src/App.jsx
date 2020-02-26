@@ -21,6 +21,10 @@ class App extends Component {
     this.setState({display:eval(this.state.display)});
   }
 
+  onDeleteHandler = () => {
+    this.setState({display:this.state.display.slice(0,-1)});
+  }
+
   render() {
     return (
       <div className="App">
@@ -28,7 +32,8 @@ class App extends Component {
         <Body onClick={
           {
           onDisplay: this.onDisplayHandler, 
-          onEqual: this.onEqualHandler
+          onEqual: this.onEqualHandler,
+          onDelete: this.onDeleteHandler
           }
         }/>
       </div>

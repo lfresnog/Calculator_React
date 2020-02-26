@@ -1,9 +1,10 @@
 import React from 'react';
+import './Styles.css'
 
 const Display = (props) => {
     return (
-        <div>
-            <h1>{props.output}</h1>
+        <div className="Display">
+            <h1 classNamme="Output">{props.output}</h1>
         </div> 
     )
 }
