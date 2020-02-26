@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   onEqualHandler = () => {
-    this.setState({display:eval(this.state.display)});
+    this.setState({display:`${eval(this.state.display)}`});
   }
 
   onDeleteHandler = () => {
