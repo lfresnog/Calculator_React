@@ -2,17 +2,30 @@
     padding: 10px;
     margin: 10px;
     width: 60px;
-    height: 25px;
+    height: 30px;
     background:#f1f3f4;
     color:#202124;
     border: 1px solid#f1f3f4;
     border-radius: 4px;
 }
+
+.buttonC{
+    padding: 10px;
+    margin: 10px;
+    width: 60px;
+    height: 30px;
+    background:#f1f3f4;
+    color:#202124;
+    border: 1px solid#f1f3f4;
+    border-radius: 4px;
+    font-size: xx-large;
+}
+
 .zero{
     padding: 10px;
     margin: 10px;
-    width: 120px;
-    height: 25px;
+    width: 200px;
+    height: 55px;
     background:#dfe1e5;
     color:#202124;
     border: 1px solid#dfe1e5;
@@ -23,7 +36,7 @@
 .equal{
     padding: 10px;
     margin: 10px;
-    width: 25px;
+    width: 90px;
     height: 120px;
     background:#dfe1e5;
     color:#202124;
@@ -34,20 +47,26 @@
 .App {
     margin-left: auto;
     margin-right: auto;
-    width: 500px;
+    width: fit-content;
+    height: fit-content;
     display: flex;
     flex-direction: column;
 }
 
 .Body{
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .Display{
     display: flex;
     justify-content: flex-end;
-
     margin: 10px;
-    width: 500px;
+    width: 420px;
     height: 80px;
     border: 2px solid #dfe1e5;
     box-sizing: border-box;
@@ -55,31 +74,70 @@
 
 }
 
-.Output{
-
-}
-
 .b1{
-    width: 500px;
+    width: 450px;
     height: fit-content;
     display: flex;
-    align-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 .b2{
-    width: 500px;
+    width: 450px;
     height: fit-content;
     display: flex;
-    align-content: center;
-    flex-wrap: wrap;
 }
 
 .b2a{
-    width: 500px;
+    width: 340px;
     height: fit-content;
     display: flex;
-    align-content: center;
     flex-wrap: wrap;
 }
 
+.b2b{
+    width: 100px;
+    height: fit-content;
+    display: flex;
+    justify-content: space-around;
+}
 
+.b2a1{
+    width: 340px;
+    height: fit-content;
+    display: flex;
+    justify-content: space-around;
+}
+
+.b2a2{
+    width: 340px;
+    height: fit-content;
+    display: flex;
+    justify-content: space-around;
+}
+
+.register{
+    display: flex;
+    margin: 10px;
+    width: 450px;
+    height: 80px;
+}
+
+.operations{
+    display: flex;
+    margin: 10px;
+    width: 340px;
+    height: 80px;
+}
+
+.upDown{
+    display: flex;
+    margin: 10px;
+    width: 100px;
+    height: 80px;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.arrow{
+    text-align: center;
+}
