@@ -6,7 +6,7 @@ const Body  = (props) => {
     const {onDisplay,onEqual,onDelete,onComplex,onTrigo} = props.onClick;
 
     return (
-        <div className="Body">
+        <div className="body">
             <div className="Basic">
                 <div className="b1">
                     <div className="buttonC" onClick = {()=>onDelete()}>☭</div>
@@ -34,14 +34,12 @@ const Body  = (props) => {
                             <div className="button" onClick = {()=>onDisplay(".")}>.</div>
                         </div>
                     </div>
-                    <div className="b2b">
-                        <div className="equal" onClick = {()=>onEqual()}>=</div>
-                    </div>
+                    <div className="equal" onClick = {()=>onEqual()}>=</div>
                 </div>
             </div>
 
             {(props.complex === true) ? 
-                <div className="Complex">
+                <div className="complex">
                     <div className="button" onClick = {()=>onDisplay("(")}>(</div> 
                     <div className="button" onClick = {()=>onDisplay(")")}>)</div>
                     <div className="button" onClick = {()=>onTrigo("sin")}>sin</div>

@@ -80,10 +80,14 @@ class App extends Component {
     });
   }
 
+  onOperationHandler = (operation) => {
+    this.setState({display:`${eval(operation)}`});
+  }
+
   render() {
     return (
       <div className="App">
-        <Register onClick={{onIndex: this.onIndexHandler}} regs = {this.state.regs}/>
+        <Register onClick={{onIndex: this.onIndexHandler,onOperation: this.onOperationHandler}} regs = {this.state.regs}/>
         <Display output = {this.state.display}/>
         <Body onClick={
           {

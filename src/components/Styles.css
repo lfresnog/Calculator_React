@@ -1,7 +1,7 @@
 .button{
     padding: 10px;
     margin: 10px;
-    width: 60px;
+    width: 50px;
     height: 30px;
     background:#f1f3f4;
     color:#202124;
@@ -12,7 +12,7 @@
 .buttonC{
     padding: 10px;
     margin: 10px;
-    width: 60px;
+    width: 50px;
     height: 30px;
     background:#f1f3f4;
     color:#202124;
@@ -24,120 +24,105 @@
 .zero{
     padding: 10px;
     margin: 10px;
-    width: 200px;
-    height: 55px;
+    width: 100px;
+    height: 30px;
     background:#dfe1e5;
     color:#202124;
     border: 1px solid#dfe1e5;
     border-radius: 4px;
-    box-sizing: border-box;
 }
 
 .equal{
     padding: 10px;
     margin: 10px;
-    width: 90px;
-    height: 120px;
+    width: 50px;
+    height: 100px;
     background:#dfe1e5;
     color:#202124;
     border: 1px solid#dfe1e5;
     border-radius: 4px;
-    box-sizing: border-box;
 }
-.App {
-    margin-left: auto;
-    margin-right: auto;
+
+.b2a2{
     width: fit-content;
     height: fit-content;
     display: flex;
-    flex-direction: column;
 }
 
-.Body{
-    height: fit-content;
+.b2a1{
     width: fit-content;
-    display: flex;
-    align-content: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-
-.Display{
-    display: flex;
-    justify-content: flex-end;
-    margin: 10px;
-    width: 420px;
-    height: 80px;
-    border: 2px solid #dfe1e5;
-    box-sizing: border-box;
-    border-radius: 4px;
-
-}
-
-.b1{
-    width: 450px;
-    height: fit-content;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-.b2{
-    width: 450px;
     height: fit-content;
     display: flex;
 }
 
 .b2a{
-    width: 340px;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction:column;
+}
+
+.b2{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+}
+
+.b1{
+    width: 370px;
     height: fit-content;
     display: flex;
     flex-wrap: wrap;
+
 }
 
-.b2b{
-    width: 100px;
+.complex{
+    width: fit-content;
+    height: fit-content;
+    display: flex; 
+    flex-direction:column;
+}
+
+.body{
+    width: fit-content;
     height: fit-content;
     display: flex;
-    justify-content: space-around;
 }
 
-.b2a1{
-    width: 340px;
-    height: fit-content;
-    display: flex;
-    justify-content: space-around;
-}
-
-.b2a2{
-    width: 340px;
-    height: fit-content;
-    display: flex;
-    justify-content: space-around;
-}
-
-.register{
-    display: flex;
+.display{
     margin: 10px;
-    width: 450px;
-    height: 80px;
-}
-
-.operations{
-    display: flex;
-    margin: 10px;
-    width: 340px;
-    height: 80px;
+    width: 370px;
+    height: 60px;
+    border: 2px solid #dfe1e5;
+    border-radius: 4px;
 }
 
 .upDown{
+    width: fit-content;
+    height: fit-content;
     display: flex;
-    margin: 10px;
-    width: 100px;
-    height: 80px;
-    flex-direction: column;
-    justify-content: flex-end;
+    flex-direction:column;
 }
 
-.arrow{
-    text-align: center;
+.operations{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction:column;
+}
+
+.register{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+}
+
+.App{
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction:column;
 }
