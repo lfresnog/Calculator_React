@@ -14,7 +14,7 @@ To install them, run this command:
 npm install
 ```
 
-To run the programme in the server 3003
+To run the programme in the server 3000
 
 ```js
 npm start
