@@ -6,9 +6,9 @@ const Register = (props) => {
     return(
         <div className = "register">
             <div className="operations">
-                <h3 className="reg" onClick={()=>onOperation(props.regs[0])}>{props.regs[0]}</h3>
-                <h3 className="reg" onClick={()=>onOperation(props.regs[1])}>{props.regs[1]}</h3>
-                <h3 className="reg" onClick={()=>onOperation(props.regs[2])}>{props.regs[2]}</h3>
+                <div className="reg" onClick={()=>onOperation(props.regs[0])}>{props.regs[0]}</div>
+                <div className="reg" onClick={()=>onOperation(props.regs[1])}>{props.regs[1]}</div>
+                <div className="reg" onClick={()=>onOperation(props.regs[2])}>{props.regs[2]}</div>
             </div>
             <div className = "upDown">
                 <h2 className="arrow" onClick={()=>onIndex("up")}>↑</h2>

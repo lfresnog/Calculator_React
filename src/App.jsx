@@ -10,15 +10,18 @@ class App extends Component {
     regs:[],
     display:"0",
     complex: false,
-    index:0
+    index:0,
+    new:0
   }
 
   onDisplayHandler = (display) => {
     console.log(display);
     if(this.state.display === "0"){
       this.setState({display});
+      this.setState({new:0});
     }else{
       this.setState({display:`${this.state.display}${display}`});
+      this.setState({new:0});
     }
   }
 
@@ -35,6 +38,7 @@ class App extends Component {
                this.state.operations[size-1-this.state.index],
                this.state.operations[size-2-this.state.index]]
       });
+      this.setState({new:1});
       console.log(this.state.regs);
     } catch (error) {
       this.setState({display:`Syntax ERROR`});
@@ -43,7 +47,7 @@ class App extends Component {
   }
 
   onDeleteHandler = () => {
-    if(this.state.display === "Syntax ERROR" || this.state.display === "Infinity" || this.state.display === "undefined"){
+    if(this.state.display === "Syntax ERROR" || this.state.display === "Infinity" || this.state.display === "undefined" || this.state.new === 1){
       this.setState({display:"0"});
     }else{
       this.setState({display:this.state.display.slice(0,-1)});
@@ -57,13 +61,13 @@ class App extends Component {
 
   onTrigoHandler = (type) => {
     if(type === "sin"){
-      this.setState({display:Math.sin(this.state.display)});
+      this.setState({display:`${Math.sin(this.state.display)}`});
     }
     else if(type === "cos"){
-      this.setState({display:Math.cos(this.state.display)});
+      this.setState({display:`${Math.cos(this.state.display)}`});
     }
     else{
-      this.setState({display:Math.tan(this.state.display)});
+      this.setState({display:`${Math.tan(this.state.display)}`});
     }
   }
 
