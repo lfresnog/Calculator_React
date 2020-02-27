@@ -27,18 +27,18 @@ class App extends Component {
 
   onEqualHandler = () => {
     try {
-      let size = this.state.operations.length;
-      console.log(size);
       let operations = this.state.operations;
       operations.push(this.state.display);
       this.setState({display:`${eval(this.state.display)}`});
       this.setState({operations});
+      let size = this.state.operations.length;
       this.setState({
-        regs: [this.state.operations[size-this.state.index],
-               this.state.operations[size-1-this.state.index],
-               this.state.operations[size-2-this.state.index]]
+        regs: [this.state.operations[size-1],
+               this.state.operations[size-2],
+               this.state.operations[size-3]]
       });
       this.setState({new:1});
+      this.setState({index:0});
       console.log(this.state.regs);
     } catch (error) {
       this.setState({display:`Syntax ERROR`});
@@ -73,15 +73,37 @@ class App extends Component {
 
   onIndexHandler = (type) => {
     let size = this.state.operations.length;
-    if (this.state.index <= size && size >= 0){
-      (type==="up")?this.setState({index:this.state.index-1}):this.setState({index:this.state.index+1});
+    let index = this.state.index;
+
+    if(this.state.operations[size-(index)]){
+      if(type==="up"){
+        index=index-1;
+      }
+    }
+    if(this.state.operations[size-(4+index)]){
+      if(type==="down"){
+        index=index+1;
+      } 
     }
 
+    //if (index < size && index >= 0){
+
+      //(type==="up")?index=index-1:index=index+1;
+
+    //}
+
+    console.log(`index:${this.state.index}`);
+    console.log(`index1:${index}`);
+    console.log(`size:${size}`);
+
+
     this.setState({
-      regs: [this.state.operations[size-this.state.index],
-             this.state.operations[size-1-this.state.index],
-             this.state.operations[size-2-this.state.index]]
+      regs: [this.state.operations[size-(1+index)],
+             this.state.operations[size-(2+index)],
+             this.state.operations[size-(3+index)]]
     });
+
+    this.setState({index});
   }
 
   onOperationHandler = (operation) => {
