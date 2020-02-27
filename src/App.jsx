@@ -61,15 +61,15 @@ class App extends Component {
 
   onTrigoHandler = (type) => {
     if(type === "sin"){
-      this.setState({display:`${Math.sin(this.state.display)}`});
+      this.setState({display:`${Math.round10(Math.sin(this.state.display), -6)}`});
       this.setState({new:1});
     }
     else if(type === "cos"){
-      this.setState({display:`${Math.cos(this.state.display)}`});
+      this.setState({display:`${Math.round10(Math.cos(this.state.display), -6)}`});
       this.setState({new:1});
     }
     else{
-      this.setState({display:`${Math.tan(this.state.display)}`});
+      this.setState({display:`${Math.round10(Math.tan(this.state.display), -6)}`});
       this.setState({new:1});
     }
   }
