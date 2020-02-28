@@ -96,6 +96,33 @@
     align-items: center;
 }
 
+.output-green{
+    color: green;
+}
+
+.output-green-h3{
+    color: green;
+    font-size: 1em;
+}
+
+.output-red{
+    color: red;
+}
+
+.output-red-h3{
+    color: red;
+    font-size: 1em;
+}
+
+.output{
+    color: black;
+}
+
+.output-h3{
+    color: black;
+    font-size: 1em;
+}
+
 .upDown{
     width: fit-content;
     height: fit-content;

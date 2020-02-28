@@ -5,11 +5,6 @@ import './components/Styles.css';
 import Display from './components/Display'
 import { evaluate } from "mathjs";
 
-function number_format(val, decimals){
-  val = parseFloat(val);
-  return val.toFixed(decimals);
-}
-
 class App extends Component {
   state = {
     operations:[],
@@ -17,17 +12,18 @@ class App extends Component {
     display:"0",
     complex: false,
     index:0,
-    new:0
+    result:0,
+    new:false
   }
 
   onDisplayHandler = (display) => {
     console.log(display);
     if(this.state.display === "0"){
       this.setState({display});
-      this.setState({new:0});
+      this.setState({new:false});
     }else{
       this.setState({display:`${this.state.display}${display}`});
-      this.setState({new:0});
+      this.setState({new:false});
     }
   }
 
@@ -36,15 +32,17 @@ class App extends Component {
       let operations = this.state.operations;
       operations.push(this.state.display);
       this.setState({display:`${evaluate(this.state.display)}`});
+      this.setState({result:evaluate(this.state.display)});;
       this.setState({operations});
+      this.setState({new:true});
+      console.log(`new:${this.state.new}`);
+      console.log(`result:${this.state.result}`)
       let size = this.state.operations.length;
       this.setState({
         regs: [this.state.operations[size-1],
                this.state.operations[size-2],
                this.state.operations[size-3]]
       });
-      this.setState({new:1});
-      this.setState({index:0});
       console.log(this.state.regs);
     } catch (error) {
       this.setState({display:`Syntax ERROR`});
@@ -54,6 +52,7 @@ class App extends Component {
 
   onDeleteHandler = (type) => {
     (type==="del")?this.setState({display:this.state.display.slice(0,-1)}):this.setState({display:"0"});
+    this.setState({new:false});
   }
 
   onComplexHandler = () => {
@@ -93,10 +92,8 @@ class App extends Component {
   onOperationHandler = (operation) => {
     if(this.state.display === "0"){
       this.setState({display:`${eval(operation)}`});
-      this.setState({new:0});
     }else{
       this.setState({display:`${this.state.display}${eval(operation)}`});
-      this.setState({new:0});
     }
     
   }
@@ -105,7 +102,7 @@ class App extends Component {
     return (
       <div className="App">
         {(this.state.complex === true) ? <Register onClick={{onIndex: this.onIndexHandler,onOperation: this.onOperationHandler}} regs = {this.state.regs}/>:null}
-        <Display onClick = {{onComplex: this.onComplexHandler}} output = {this.state.display}/>
+        <Display onClick = {{onComplex: this.onComplexHandler}} output = {this.state.display} result = {this.state.result} new={this.state.new}/>
         <Body onClick={
           {
           onDisplay: this.onDisplayHandler, 
