@@ -91,9 +91,9 @@ class App extends Component {
 
   onOperationHandler = (operation) => {
     if(this.state.display === "0"){
-      this.setState({display:`${eval(operation)}`});
+      this.setState({display:`${evaluate(operation)}`});
     }else{
-      this.setState({display:`${this.state.display}${eval(operation)}`});
+      this.setState({display:`${this.state.display}${evaluate(operation)}`});
     }
     
   }
