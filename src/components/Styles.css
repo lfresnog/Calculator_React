@@ -9,19 +9,12 @@
     border-radius: 4px;
 }
 
-.buttonC{
-    padding: 10px;
-    margin: 10px;
-    width: 50px;
-    height: 30px;
-    background:#f1f3f4;
-    color:#202124;
-    border: 1px solid#f1f3f4;
-    border-radius: 4px;
-    font-size:50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.button:hover {
+    background-color: #eeeeee;
+}
+  
+.button:active {
+    background-color: #dcdcdc;
 }
 
 .zero{

@@ -3,14 +3,14 @@ import './Styles.css'
 
 const Body  = (props) => {
    
-    const {onDisplay,onEqual,onDelete,onComplex,onTrigo} = props.onClick;
+    const {onDisplay,onEqual,onDelete} = props.onClick;
 
     return (
         <div className="body">
             <div className="Basic">
                 <div className="b1">
-                    <div className="buttonC" onClick = {()=>onDelete()}>☭</div>
-                    <div className="button" onClick = {()=>onComplex()}>T</div>
+                    <div className="button" onClick = {()=>onDelete("del")}>DEL</div>
+                    <div className="button" onClick = {()=>onDelete("ac")}>AC</div>
                     <div className="button" onClick = {()=>onDisplay("/")}>/</div>
                     <div className="button" onClick = {()=>onDisplay("*")}>*</div>
                     <div className="button" onClick = {()=>onDisplay("7")}>7</div>
@@ -42,9 +42,9 @@ const Body  = (props) => {
                 <div className="complex">
                     <div className="button" onClick = {()=>onDisplay("(")}>(</div> 
                     <div className="button" onClick = {()=>onDisplay(")")}>)</div>
-                    <div className="button" onClick = {()=>onTrigo("sin")}>sin</div>
-                    <div className="button" onClick = {()=>onTrigo("cos")}>cos</div>
-                    <div className="button" onClick = {()=>onTrigo("tan")}>tan</div>
+                    <div className="button" onClick = {()=>onDisplay("sin(")}>sin</div>
+                    <div className="button" onClick = {()=>onDisplay("cos(")}>cos</div>
+                    <div className="button" onClick = {()=>onDisplay("tan(")}>tan</div>
                 </div>
             : null }
 

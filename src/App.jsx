@@ -3,6 +3,7 @@ import Body from './components/Body'
 import Register from './components/Register'
 import './components/Styles.css';
 import Display from './components/Display'
+import { evaluate } from "mathjs";
 
 function number_format(val, decimals){
   val = parseFloat(val);
@@ -34,7 +35,7 @@ class App extends Component {
     try {
       let operations = this.state.operations;
       operations.push(this.state.display);
-      this.setState({display:`${eval(this.state.display)}`});
+      this.setState({display:`${evaluate(this.state.display)}`});
       this.setState({operations});
       let size = this.state.operations.length;
       this.setState({
@@ -51,32 +52,13 @@ class App extends Component {
     
   }
 
-  onDeleteHandler = () => {
-    if(this.state.display === "Syntax ERROR" || this.state.display === "Infinity" || this.state.display === "undefined" || this.state.new === 1){
-      this.setState({display:"0"});
-    }else{
-      this.setState({display:this.state.display.slice(0,-1)});
-    }
+  onDeleteHandler = (type) => {
+    (type==="del")?this.setState({display:this.state.display.slice(0,-1)}):this.setState({display:"0"});
   }
 
   onComplexHandler = () => {
     this.setState({complex:!this.state.complex});
     console.log(this.state.complex);
-  }
-
-  onTrigoHandler = (type) => {
-    if(type === "sin"){
-      this.setState({display:`${number_format(Math.sin(this.state.display),6)}`});
-      this.setState({new:1});
-    }
-    else if(type === "cos"){
-      this.setState({display:`${number_format(Math.cos(this.state.display),6)}`});
-      this.setState({new:1});
-    }
-    else{
-      this.setState({display:`${number_format(Math.tan(this.state.display),6)}`});
-      this.setState({new:1});
-    }
   }
 
   onIndexHandler = (type) => {
@@ -93,12 +75,6 @@ class App extends Component {
         index=index+1;
       } 
     }
-
-    //if (index < size && index >= 0){
-
-      //(type==="up")?index=index-1:index=index+1;
-
-    //}
 
     console.log(`index:${this.state.index}`);
     console.log(`index1:${index}`);
@@ -128,15 +104,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Register onClick={{onIndex: this.onIndexHandler,onOperation: this.onOperationHandler}} regs = {this.state.regs}/>
-        <Display output = {this.state.display}/>
+        {(this.state.complex === true) ? <Register onClick={{onIndex: this.onIndexHandler,onOperation: this.onOperationHandler}} regs = {this.state.regs}/>:null}
+        <Display onClick = {{onComplex: this.onComplexHandler}} output = {this.state.display}/>
         <Body onClick={
           {
           onDisplay: this.onDisplayHandler, 
           onEqual: this.onEqualHandler,
-          onDelete: this.onDeleteHandler,
-          onComplex: this.onComplexHandler,
-          onTrigo: this.onTrigoHandler
+          onDelete: this.onDeleteHandler
           }
         } complex = {this.state.complex}/>
       </div>
